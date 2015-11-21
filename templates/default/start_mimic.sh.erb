@@ -1,0 +1,5 @@
+#!/bin/bash
+#closes existing mimic process on port 8900 if already running
+fuser -n tcp -k 8900;
+source <%=node['app']['virtualenv']%>/bin/activate;
+twistd mimic --r;
